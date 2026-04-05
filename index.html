@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Muhammad Rafi — Manufacturing • Economics Enthusiast">
+    <title>Muhammad Rafi • Bio</title>
+    <style>
+        :root {
+            --cyan: #00d4ff; --blue: #3b82f6; --deep-blue: #1e3a8a;
+            --darker: #020208; --white: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.06);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --glass-highlight: rgba(255, 255, 255, 0.2);
+            --text-sec: rgba(255, 255, 255, 0.65);
+            --text-dim: rgba(255, 255, 255, 0.45);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--darker); color: var(--white); line-height: 1.5; font-size: 15px;
+            min-height: 100vh; overflow-x: hidden; position: relative;
+        }
+        .bg-layer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+        .bg-gradient {
+            width: 100%; height: 100%;
+            background: radial-gradient(ellipse 70% 50% at 20% 10%, rgba(59,130,246,0.3) 0%, transparent 60%),
+                        radial-gradient(ellipse 60% 40% at 80% 30%, rgba(0,212,255,0.2) 0%, transparent 60%),
+                        linear-gradient(135deg, var(--darker) 0%, #0a1628 50%, var(--darker) 100%);
+        }
+        .bg-orb { position: absolute; border-radius: 50%; filter: blur(40px); opacity: 0.25; transform: translate3d(0,0,0); }
+        .bg-orb-1 { width: 240px; height: 240px; background: var(--blue); top: -40px; right: -60px; animation: orbFloat1 16s ease-in-out infinite; }
+        .bg-orb-2 { width: 200px; height: 200px; background: var(--cyan); bottom: 15%; left: -50px; animation: orbFloat2 18s ease-in-out infinite; }
+        @keyframes orbFloat1 { 0%, 100% { transform: translate3d(0,0,0); } 50% { transform: translate3d(-20px, 25px, 0); } }
+        @keyframes orbFloat2 { 0%, 100% { transform: translate3d(0,0,0); } 50% { transform: translate3d(15px, -20px, 0); } }
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px) saturate(150%);
+            -webkit-backdrop-filter: blur(12px) saturate(150%);
+            border: 1px solid var(--glass-border);
+            border-top-color: var(--glass-highlight);
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            position: relative; overflow: hidden;
+            contain: layout style paint;
+        }
+        .glass::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--glass-highlight), transparent); }
+        .grad-text { background: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 50%, var(--cyan) 100%); background-size: 200% 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: gradShift 4s ease-in-out infinite; }
+        .grad-text-cyan { background: linear-gradient(135deg, #ffffff 0%, var(--cyan) 50%, var(--blue) 100%); background-size: 200% 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: gradShift 5s ease-in-out infinite; }
+        .grad-text-subtle { background: linear-gradient(135deg, var(--text-sec) 0%, var(--cyan) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        @keyframes gradShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+        .container { position: relative; z-index: 1; max-width: 480px; margin: 0 auto; padding: 0 16px 40px; }
+        .hero { padding: 40px 16px 16px; text-align: center; }
+        .avatar-ring { width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 16px; padding: 3px; background: linear-gradient(135deg, var(--cyan), var(--blue), var(--cyan)); background-size: 200% 200%; animation: gradShift 4s ease-in-out infinite; position: relative; }
+        .avatar-ring::after { content: ''; position: absolute; inset: 2px; border-radius: 50%; background: var(--darker); }
+        .avatar-img { position: relative; z-index: 1; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+        .online-dot { position: absolute; bottom: 4px; right: 4px; width: 14px; height: 14px; background: #00d9a5; border-radius: 50%; border: 2px solid var(--darker); z-index: 2; box-shadow: 0 0 6px rgba(0,217,165,0.4); }
+        .hero h1 { font-size: 1.5em; font-weight: 800; margin-bottom: 4px; }
+        .hero .tagline { font-size: 0.85em; color: var(--text-sec); margin-bottom: 6px; }
+        .hero .hook { font-size: 0.8em; color: var(--cyan); font-style: italic; margin-bottom: 14px; opacity: 0.9; }
+        .bio-wrapper { max-width: 340px; margin: 0 auto; }
+        .bio-text { font-size: 0.85em; color: var(--text-sec); line-height: 1.6; text-align: left; }
+        .bio-text strong { color: var(--white); font-weight: 600; }
+        .section-title { font-size: 0.75em; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px; margin: 24px 0 12px; padding-left: 4px; display: flex; align-items: center; gap: 8px; }
+        .section-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--glass-border), transparent); }
+        .highlight-card { padding: 18px 16px; margin-bottom: 12px; background: linear-gradient(135deg, rgba(255,183,77,0.1) 0%, rgba(59,130,246,0.08) 100%); border-color: rgba(255,183,77,0.15); }
+        .highlight-card::before { background: linear-gradient(90deg, transparent, rgba(255,183,77,0.3), transparent); }
+        .highlight-label { font-size: 0.7em; font-weight: 700; color: #ffb74d; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+        .highlight-title { font-size: 1em; font-weight: 700; margin-bottom: 6px; line-height: 1.3; }
+        .highlight-desc { font-size: 0.82em; color: var(--text-sec); line-height: 1.6; }
+        .highlight-desc .satire { color: #ffb74d; font-weight: 500; }
+        .link-card { display: flex; align-items: center; gap: 12px; padding: 14px; margin-bottom: 8px; text-decoration: none; color: var(--white); transition: transform 0.2s ease, background 0.2s ease; cursor: pointer; position: relative; }
+        .link-card:active { transform: scale(0.98); }
+        .link-card.active-link:hover { background: rgba(255,255,255,0.08); }
+        .link-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.08); overflow: hidden; }
+        .link-icon.ig { background: linear-gradient(135deg, #833AB4, #FD1D1D, #F77737); }
+        .link-icon.tt { background: #010101; display: flex; align-items: center; justify-content: center; }
+        .link-icon.yt { background: linear-gradient(135deg, #FF0000, #CC0000); }
+        .link-icon.wa { background: linear-gradient(135deg, #25D366, #128C7E); }
+        .link-icon img { width: 100%; height: 100%; object-fit: cover; }
+        .link-info { flex: 1; min-width: 0; }
+        .link-title { font-weight: 600; font-size: 0.9em; margin-bottom: 1px; }
+        .link-desc { font-size: 0.75em; color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .link-desc.coming-soon { color: #ffb74d; font-style: italic; }
+        .link-arrow { font-size: 1.1em; color: var(--text-dim); transition: transform 0.2s ease, color 0.2s ease; }
+        .link-card:hover .link-arrow { transform: translateX(3px); color: var(--cyan); }
+        .project-card { display: flex; align-items: center; gap: 12px; padding: 14px; margin-bottom: 8px; cursor: pointer; transition: background 0.2s ease; position: relative; }
+        .project-card:active { transform: scale(0.98); }
+        .project-card:hover { background: rgba(255,255,255,0.06); }
+        .project-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2em; flex-shrink: 0; background: rgba(59,130,246,0.2); border: 1px solid rgba(255,255,255,0.08); }
+        .project-info { flex: 1; }
+        .project-title { font-weight: 600; font-size: 0.9em; margin-bottom: 1px; }
+        .project-desc { font-size: 0.75em; color: var(--text-dim); }
+        .project-status { font-size: 0.65em; padding: 3px 8px; border-radius: 8px; background: rgba(255,255,255,0.06); color: var(--text-dim); font-weight: 500; flex-shrink: 0; }
+        .fade-in { opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .toast.show { transform: translateX(-50%) translateY(0); }
+        .skills-grid .skill-tag { transition: all 0.2s ease; }
+        .skills-grid .skill-tag:hover { background: rgba(0,212,255,0.2); border-color: var(--cyan); color: white; }
+        .cta-btn, .cta-secondary { transition: transform 0.2s ease, background 0.2s; cursor: pointer; }
+        .cta-btn:hover, .cta-secondary:hover { transform: scale(0.98); opacity: 0.9; }
+        .footer-link { transition: color 0.2s; }
+        .footer-link:hover { color: var(--cyan); }
+    </style>
+</head>
+<body>
+    <div class="bg-layer">
+        <div class="bg-gradient"></div>
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+    </div>
+    <div class="container">
+        <section class="hero">
+            <div class="avatar-ring">
+                <img class="avatar-img" src="profil.jpg" alt="Muhammad Rafi">
+                <div class="online-dot"></div>
+            </div>
+            <h1 class="grad-text-cyan">Muhammad Rafi</h1>
+            <p class="tagline">Manufacturing • Economics Enthusiast</p>
+            <p class="hook">"Belum 20 tahun, tapi udah paham kenapa kamu masih nggak kaya-kaya."</p>
+            <div class="bio-wrapper">
+                <p class="bio-text" id="dynamicBio">Halo! 👋 Aku <strong>Rafi</strong>, 19 tahun. Obsesi aku simpel: bikin ekonomi & finansial itu <strong>nggak membosankan</strong>. Sharing insights, motivasi, dan financial literacy untuk generasi muda Indonesia. 🚀</p>
+            </div>
+        </section>
+        
+        <div class="section-title">🔥 Highlight</div>
+        <div class="glass highlight-card fade-in">
+            <div class="highlight-label">📢 Perhatian Gen-Z</div>
+            <div class="highlight-title grad-text-subtle">Dunia lagi kacau. Ekonomi global goyah. Pasar dunia fluktuatif. Dan kamu masih nonton reels TikTok 6 jam sehari?</div>
+            <div class="highlight-desc">Inflation naik, lapangan kerja makin <em>competitive</em>, AI ngambil alih industri, dan harga-harga makin gak masuk akal. Tapi yang bikin miris? Masih banyak yang <span class="satire">nganggap "masa depan" itu masih jauh banget</span> — padahal tiap hari yang lewat itu compound interest yang nggak bakal balik.<br><br><strong style="color: var(--white);">Melek ekonomi itu bukan pilihan lagi. Itu survival.</strong> 🌍</div>
+        </div>
+        
+        <div class="section-title">📱 Social Links</div>
+        <a href="https://www.instagram.com/rapionly?igsh=MTV0enBtYWNmYzRhbg==" target="_blank" class="glass link-card active-link fade-in" onclick="trackClick('Instagram')">
+            <div class="link-icon ig"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+            <div class="link-info"><div class="link-title">Instagram</div><div class="link-desc">@rapionly • Tips ekonomi & motivasi harian</div></div>
+            <span class="link-arrow">›</span>
+        </a>
+        <div class="glass link-card fade-in" onclick="showToast('📸 Coming Soon — DM aja di IG!')">
+            <div class="link-icon tt">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v3.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.76-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.3-.7.36-1.1.07-.69.1-1.38.08-2.07.05-3.02.01-6.04.02-9.06z"/>
+                </svg>
+            </div>
+            <div class="link-info"><div class="link-title">TikTok</div><div class="link-desc coming-soon">Coming soon — DM aja di IG!</div></div>
+            <span class="link-arrow">›</span>
+        </div>
+        <div class="glass link-card fade-in" onclick="showToast('▶️ Coming Soon — DM aja di IG!')">
+            <div class="link-icon yt"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div>
+            <div class="link-info"><div class="link-title">YouTube</div><div class="link-desc coming-soon">Coming soon — DM aja di IG!</div></div>
+            <span class="link-arrow">›</span>
+        </div>
+        <div class="glass link-card fade-in" onclick="showToast('💬 Coming Soon — DM aja di IG!')">
+            <div class="link-icon wa"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+            <div class="link-info"><div class="link-title">WhatsApp</div><div class="link-desc coming-soon">Coming soon — DM aja di IG!</div></div>
+            <span class="link-arrow">›</span>
+        </div>
+        
+        <div class="section-title">💼 Projects</div>
+        <div class="glass project-card fade-in" onclick="showToast('📖 Coming Soon — Dalam tahap research')">
+            <div class="project-icon">📖</div>
+            <div class="project-info"><div class="project-title">E-Book: Ekonomi untuk Pemula</div><div class="project-desc">Panduan lengkap ekonomi dasar</div></div>
+            <div class="project-status">Research</div>
+        </div>
+        <div class="glass project-card fade-in" onclick="showToast('📊 Coming Soon — Dalam tahap research')">
+            <div class="project-icon">📊</div>
+            <div class="project-info"><div class="project-title">Dashboard: Market Tracker</div><div class="project-desc">Tracking pasar global real-time</div></div>
+            <div class="project-status">Research</div>
+        </div>
+        <div class="glass project-card fade-in" onclick="showToast('🏭 Coming Soon — Dalam tahap research')">
+            <div class="project-icon">🏭</div>
+            <div class="project-info"><div class="project-title">Manufacturing Insights</div><div class="project-desc">Analisis industri manufaktur Indonesia</div></div>
+            <div class="project-status">Research</div>
+        </div>
+        <div class="glass project-card fade-in" onclick="showToast('🌏 Coming Soon — Dalam tahap research')">
+            <div class="project-icon">🌏</div>
+            <div class="project-info"><div class="project-title">Global Economy Brief</div><div class="project-desc">Rangkuman ekonomi dunia mingguan</div></div>
+            <div class="project-status">Research</div>
+        </div>
+        <p style="text-align:center; font-size:0.75em; color:var(--text-dim); margin:8px 0 16px; font-style:italic;" class="fade-in">✨ Semua project coming soon — dalam tahap research</p>
+                <div class="section-title">🧠 Skills & Interests</div>
+        <div class="glass" style="padding: 14px;" class="fade-in">
+            <div class="skills-grid fade-in" style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px;">
+                <span class="skill-tag" style="padding:6px 12px; border-radius:16px; font-size:0.78em; font-weight:500; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); color:var(--text-sec);">📊 Ekonomi Makro</span>
+                <span class="skill-tag" style="padding:6px 12px; border-radius:16px; font-size:0.78em; font-weight:500; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); color:var(--text-sec);">📈 Investasi</span>
+                <span class="skill-tag" style="padding:6px 12px; border-radius:16px; font-size:0.78em; font-weight:500; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); color:var(--text-sec);">💰 Financial Planning</span>
+                <span class="skill-tag" style="padding:6px 12px; border-radius:16px; font-size:0.78em; font-weight:500; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); color:var(--text-sec);">🧠 Psikologi Uang</span>
+                <span class="skill-tag" style="padding:6px 12px; border-radius:16px; font-size:0.78em; font-weight:500; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); color:var(--text-sec);">📱 Social Media</span>
+                <span class="skill-tag" style="padding:6px 12px; border-radius:16px; font-size:0.78em; font-weight:500; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); color:var(--text-sec);">🎯 Public Speaking</span>
+            </div>
+        </div>
+        
+        <div class="section-title">💭 Quote of the Week</div>
+        <div class="glass quote-card fade-in" style="padding:20px 16px; text-align:center; margin-bottom:12px; background:linear-gradient(135deg, rgba(59,130,246,0.08), rgba(0,212,255,0.04)); border-color:rgba(59,130,246,0.15);">
+            <div class="quote-mark" style="font-size:2.5em; line-height:1; background:linear-gradient(135deg, var(--cyan), var(--blue)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:6px;">"</div>
+            <div class="quote-text" id="quoteText" style="font-size:0.9em; font-style:italic; color:var(--white); line-height:1.6; margin-bottom:8px; font-weight:500;">Gak usah mikir susah-susah, yang penting hidup itu harus berjalan dan dinikmati.</div>
+            <div class="quote-author" id="quoteAuthor" style="font-size:0.75em; color:var(--text-dim);">— Alm. Bob Sadino</div>
+        </div>
+
+        <div class="section-title">🎧 Spotify</div>
+        <a href="https://open.spotify.com/playlist/2BLhItY4wNrJSN9ozOBaQP" target="_blank" class="glass spotify-card fade-in" style="display:flex; align-items:center; gap:12px; padding:14px; margin-bottom:12px; text-decoration:none; color:var(--white); transition:background 0.2s ease;">
+            <div class="spotify-icon" style="width:44px; height:44px; border-radius:10px; background:linear-gradient(135deg, #1DB954, #169C46); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></div>
+            <div class="spotify-info" style="flex:1;"><div class="spotify-label" style="font-size:0.7em; color:#1DB954; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Spotify Playlist</div><div class="spotify-title" style="font-weight:600; font-size:0.9em;">Fav Song 🎵</div></div>
+            <span class="spotify-arrow" style="color:var(--text-dim); font-size:1.1em;">›</span>
+        </a>
+        
+        <div class="section-title">💰 Support</div>
+        <div class="glass qris-card fade-in" style="padding:20px 16px; margin-bottom:12px; text-align:center; background:linear-gradient(135deg, rgba(0,212,255,0.08), rgba(59,130,246,0.05)); border-color:rgba(0,212,255,0.2); overflow:hidden;">
+            <div class="qris-label" style="font-size:0.75em; font-weight:700; color:var(--cyan); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:14px; display:flex; align-items:center; justify-content:center; gap:6px;"><span>💰</span><span>Donasi via QRIS</span></div>
+            <div class="qris-qr-container" style="background:white; padding:14px; border-radius:24px; display:inline-block; margin:10px 0; box-shadow:0 2px 12px rgba(0,0,0,0.2); overflow:hidden;">
+                <img src="qris.jpg" alt="QR Code QRIS" class="qris-qr-code" style="width:200px; height:200px; object-fit:contain; display:block; border-radius:16px;">
+            </div>
+            <div class="qris-title" style="font-size:1em; font-weight:700; margin:12px 0 6px; background:linear-gradient(135deg, var(--cyan), var(--blue)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Terima Kasih Atas Dukungannya!</div>
+            <div class="qris-desc" style="font-size:0.82em; color:var(--text-sec); line-height:1.5; margin-bottom:10px;">Scan QR code di atas untuk berdonasi. Setiap kontribusi sangat berarti untuk pengembangan konten edukasi ekonomi yang lebih baik.</div>
+            <div class="qris-note" style="font-size:0.72em; color:var(--text-dim); font-style:italic; padding:8px; background:rgba(255,255,255,0.04); border-radius:8px; margin-top:6px;">💡 Nominal bebas • Terima kasih sudah mendukung!</div>
+        </div>
+        
+        <a href="https://www.instagram.com/rapionly?igsh=MTV0enBtYWNmYzRhbg==" target="_blank" class="cta-btn fade-in" style="display:flex; align-items:center; justify-content:center; gap:8px; width:100%; padding:14px; border-radius:14px; border:none; font-size:0.95em; font-weight:700; cursor:pointer; text-decoration:none; color:var(--white); background:linear-gradient(135deg, var(--blue) 0%, var(--cyan) 50%, #818cf8 100%); background-size:200% 200%; animation:gradShift 3s ease-in-out infinite; box-shadow:0 4px 16px rgba(59,130,246,0.25); transition:transform 0.2s ease; margin-bottom:8px;">✨ Follow Say — Gas Gas Gas! 🔥</a>
+        <a href="mailto:rafijapann@gmail.com" class="cta-btn cta-secondary fade-in" style="display:flex; align-items:center; justify-content:center; gap:8px; width:100%; padding:14px; border-radius:14px; border:none; font-size:0.95em; font-weight:700; cursor:pointer; text-decoration:none; color:var(--white); background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1); box-shadow:none; transition:transform 0.2s ease; margin-bottom:8px;">📧 DM Langsung via Email</a>
+        
+        <footer class="footer" style="text-align:center; padding:24px 16px 16px; color:var(--text-dim); font-size:0.72em;">
+            <p>© 2026 • Made with Blue Liquid Glass</p>
+            <div class="footer-links" style="display:flex; justify-content:center; gap:14px; margin-top:6px;">
+                <a href="#" class="footer-link" style="color:var(--text-dim); text-decoration:none; transition:color 0.2s;" onclick="showToast('📄 Privacy Policy')">Privacy</a>
+                <a href="#" class="footer-link" style="color:var(--text-dim); text-decoration:none; transition:color 0.2s;" onclick="showToast('📄 Terms')">Terms</a>
+                <a href="#" class="footer-link" style="color:var(--text-dim); text-decoration:none; transition:color 0.2s;" onclick="showToast('❤️ Thanks for visiting!')">Love</a>
+            </div>
+        </footer>
+    </div>
+    <div class="toast" id="toast" style="position:fixed; bottom:16px; left:50%; transform:translateX(-50%) translateY(100px); padding:10px 20px; border-radius:12px; font-size:0.82em; font-weight:500; color:var(--white); background:linear-gradient(135deg, var(--blue), var(--cyan)); box-shadow:0 4px 16px rgba(0,0,0,0.3); z-index:1000; transition:transform 0.3s cubic-bezier(0.4,0,0.2,1); white-space:nowrap; max-width:85vw; text-align:center;"></div>
+    <script>
+        function calculateAge() {
+            const now = new Date();
+            const birthYear = 2007, birthMonth = 6, birthDay = 26;
+            let age = now.getFullYear() - birthYear;
+            const currentMonth = now.getMonth();
+            const currentDay = now.getDate();
+            if (currentMonth < birthMonth || (currentMonth === birthMonth && currentDay < birthDay)) {
+                age--;
+            }
+            if (age < 19) age = 19;
+            const bioText = document.getElementById('dynamicBio');
+            if (bioText) bioText.innerHTML = 'Halo! 👋 Aku <strong>Rafi</strong>, ' + age + ' tahun. Obsesi aku simpel: bikin ekonomi & finansial itu <strong>nggak membosankan</strong>. Sharing insights, motivasi, dan financial literacy untuk generasi muda Indonesia. 🚀';
+        }
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(function() { toast.classList.remove('show'); }, 2000);
+        }
+        function trackClick(platform) { showToast('🔗 Opening ' + platform + '...'); }
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+        document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+        
+        const bobQuote = { text: "Gak usah mikir susah-susah, yang penting hidup itu harus berjalan dan dinikmati.", author: "Alm. Bob Sadino" };
+        function updateQuote() {
+            if (document.getElementById('quoteText')) document.getElementById('quoteText').textContent = bobQuote.text;
+            if (document.getElementById('quoteAuthor')) document.getElementById('quoteAuthor').textContent = '— ' + bobQuote.author;
+        }
+        calculateAge(); 
+        updateQuote();
+    </script>
+</body>
+</html>
